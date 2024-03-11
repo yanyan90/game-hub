@@ -24,7 +24,15 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
     <List>
       {data.map((genre) => (
         <ListItem key={genre.id} paddingY="5px">
-          <HStack>
+          <HStack
+            borderRadius={4}
+            padding={1}
+            backgroundColor={
+              genre.id === selectedGenre?.id
+                ? "rgba(255, 255, 255, 0.062)"
+                : "transparent"
+            }
+          >
             <Image
               boxSize="32px"
               borderRadius={8}
